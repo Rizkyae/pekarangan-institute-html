@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Laporan transparansi dana Pekarangan Institute — dua sumber, dua catatan, satu komitmen terbuka.">
+  <title>Laporan Transparansi Dana — Pekarangan Institute</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Beranda Pekarangan Institute">
+      <span class="brand-mark">P</span>
+      <span class="brand-text"><span class="name">pekarangan</span><span class="label">INSTITUTE</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Navigasi utama">
+      <a href="index.html">Beranda</a>
+      <a href="katalog.html">Katalog</a>
+      <a href="program-donasi.html">Program</a>
+      <a href="laporan.html" class="active">Transparansi</a>
+      <a href="tentang.html">Tentang Kami</a>
+    </nav>
+    <div class="header-actions">
+      <button class="cart-btn" type="button" aria-label="Keranjang belanja">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      </button>
+      <a class="btn btn-donate" href="formulir-donasi.html">Donasi</a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Navigasi mobile">
+    <a href="index.html">Beranda</a>
+    <a href="katalog.html">Katalog</a>
+    <a href="program-donasi.html">Program</a>
+    <a href="laporan.html" class="active">Transparansi</a>
+    <a href="tentang.html">Tentang Kami</a>
+  </nav>
+</header>
+
+<main class="page">
+  <div class="container">
+    <!-- Intro -->
+    <div class="page-intro">
+      <span class="eyebrow">Transparansi Dana / Laporan Dana</span>
+      <h1>Dua sumber. Dua catatan. Satu komitmen terbuka.</h1>
+      <p>Pencatatan dana berdasarkan sumbernya. Pendapatan komersial dan dana donasi memiliki ledger, kategori, dan saldo yang terpisah.</p>
+    </div>
+
+    <div class="report-filters">
+      <div class="field">
+        <label for="report-period">Periode laporan</label>
+        <select id="report-period">
+          <option>[Bulan / tahun]</option>
+          <option>[Periode contoh]</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="report-cat">Pencatatan</label>
+        <select id="report-cat">
+          <option value="Semua">[Seluruh kategori]</option>
+          <option value="Penerimaan">Penerimaan</option>
+          <option value="Penyaluran">Penyaluran</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" type="button" data-demo-action>Unduh laporan PDF &rarr;</button>
+    </div>
+    <p class="demo-note"><span class="badge-demo">Data Demo</span> &nbsp;Periode: [Periode laporan] &middot; Pembaruan: [Tanggal]. Semua angka, transaksi, dan dokumen merupakan contoh untuk menunjukkan cara kerja laporan, bukan laporan keuangan nyata.</p>
+
+    <!-- Ledger dana donasi -->
+    <section class="section">
+      <div class="section-head">
+        <span class="eyebrow">Sumber Donasi</span>
+        <h2>Dana donasi</h2>
+        <p>Hanya mencatat kontribusi sukarela, penyaluran program, dan dana belum tersalurkan. Tidak termasuk hasil penjualan produk.</p>
+        <button class="btn btn-ghost" type="button" data-demo-action style="margin-top: 12px;">Ekspor donasi &rarr;</button>
+      </div>
+
+      <div class="stats-3">
+        <div class="stat">
+          <span class="eyebrow">Dana Diterima</span>
+          <p class="value">Rp. X.XXX.XXX</p>
+        </div>
+        <div class="stat">
+          <span class="eyebrow">Dana Disalurkan</span>
+          <p class="value">Rp. X.XXX.XXX</p>
+        </div>
+        <div class="stat">
+          <span class="eyebrow">Belum Tersalurkan</span>
+          <p class="value">Rp. X.XXX.XXX</p>
+        </div>
+      </div>
+
+      <div class="ledger-wrap">
+        <table class="ledger">
+          <thead>
+            <tr>
+              <th>Tanggal</th>
+              <th>Keterangan</th>
+              <th>Referensi</th>
+              <th>Kategori</th>
+              <th>Jumlah</th>
+              <th>Saldo</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="ledger-body">
+            <tr data-kategori="Penerimaan">
+              <td>[Tanggal]</td>
+              <td>[Transaksi donasi A]<span class="sub">[Nama program] &middot; Penerimaan</span></td>
+              <td>[Referensi]</td>
+              <td>Penerimaan</td>
+              <td>Rp. X.XXX.XXX</td>
+              <td>Rp. X.XXX.XXX</td>
+              <td><span class="status-pill">Tercatat</span></td>
+            </tr>
+            <tr data-kategori="Penerimaan">
+              <td>[Tanggal]</td>
+              <td>[Transaksi donasi B]<span class="sub">[Nama program] &middot; Penerimaan</span></td>
+              <td>[Referensi]</td>
+              <td>Penerimaan</td>
+              <td>Rp. X.XXX.XXX</td>
+              <td>Rp. X.XXX.XXX</td>
+              <td><span class="status-pill pending">Menunggu verifikasi</span></td>
+            </tr>
+            <tr data-kategori="Penyaluran">
+              <td>[Tanggal]</td>
+              <td>[Transaksi penyaluran]<span class="sub">[Nama program] &middot; Penyaluran</span></td>
+              <td>[Referensi]</td>
+              <td>Penyaluran</td>
+              <td>Rp. X.XXX.XXX</td>
+              <td>Rp. X.XXX.XXX</td>
+              <td><span class="status-pill">Tercatat</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="ledger-note">Laporan: Penerimaan &middot; Penyaluran program &middot; Biaya program &middot; Pengembalian. Identitas donatur anonim disembunyikan dari laporan publik.</p>
+      <a class="text-link" href="tentang.html">Rincian alokasi program &rarr;</a>
+    </section>
+
+    <!-- Penjelasan -->
+    <section class="section">
+      <div class="explain-grid">
+        <div>
+          <h2>Jelas membedakan, mudah membacanya.</h2>
+          <p class="lead" style="margin: 12px 0 16px;">Saldo setiap ledger dihitung hanya dari sumber yang sama. Tidak ada total gabungan antara pendapatan komersial dan donasi. Pemindahan atau koreksi harus dicatat dengan referensi yang dapat ditelusuri.</p>
+          <a class="text-link" href="#">Ajukan pertanyaan laporan &rarr;</a>
+        </div>
+        <div>
+          <span class="eyebrow">Status Pencatatan</span>
+          <div class="status-def">
+            <strong>Tercatat</strong>
+            <p>Entri telah masuk ke ledger terkait.</p>
+          </div>
+          <div class="status-def">
+            <strong>Menunggu verifikasi</strong>
+            <p>Entri masih ditinjau.</p>
+          </div>
+          <p style="font-size: 13.5px; color: var(--muted); margin-top: 14px;">Status pada demo bukan bukti audit atau verifikasi dampak. Temukan ketidakcocokan? Sampaikan melalui pusat bantuan.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="Beranda Pekarangan Institute">
+          <span class="brand-mark">P</span>
+          <span class="brand-text"><span class="name">pekarangan</span><span class="label">INSTITUTE</span></span>
+        </a>
+        <p class="tagline">Berbelanja, Berbagi, Berdampak.</p>
+        <p>Ruang bertumbuh bersama, melalui karya lokal dan kepedulian yang terbuka.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Jelajahi</h4>
+        <a href="katalog.html">Katalog produk</a>
+        <a href="program-donasi.html">Program donasi</a>
+        <a href="tentang.html">Tentang kami</a>
+        <a href="laporan.html">Laporan dana</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ruang yang Aman</h4>
+        <a href="#">Kebijakan privasi</a>
+        <a href="#">Syarat layanan</a>
+        <a href="#">Pusat bantuan</a>
+        <a href="#">Aksesibilitas</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      Pekarangan Institute &middot; Konsep platform kewirausahaan sosial. Seluruh konten, data, dan foto adalah placeholder, bukan publikasi atau klaim resmi.
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
